@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     #apps
     'accounts.apps.AccountsConfig',
+    'courses.apps.CoursesConfig',
     
     #packegs
     'rest_framework',
