@@ -9,6 +9,11 @@ class CourseListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = CourseSerializer
     permission_classes = [IsInstructorOrReadOnly]
 
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return CourseCreateSerializer
+        return self.serializer_class
+
     def perform_create(self, serializer):
         serializer.save(instructor=self.request.user)
 
@@ -16,6 +21,11 @@ class CourseRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [IsInstructorOrReadOnly]
+
+    def get_serializer_class(self):
+        if self.request.method == 'PUT':
+            return CourseUpdateSerializer
+        return self.serializer_class
 
 class LessonListCreateAPIView(generics.ListCreateAPIView):
     queryset = Lesson.objects.all()
