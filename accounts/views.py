@@ -19,7 +19,7 @@ class UsersRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated, IsInstructor]
 
 
-class MyAccountView(generics.RetrieveUpdateDestroyAPIView):
+class MyAccountAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserUpdateSerializer
     permission_classes = [permissions.IsAuthenticated]
 
