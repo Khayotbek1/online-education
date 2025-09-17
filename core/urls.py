@@ -10,7 +10,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Online Course API",
         default_version='v1',
-        description="Test description",
+        description="Created by Hayotbek Razzoqov",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="zepdeveloper404@gmail.com"),
         license=openapi.License(name="Codial License"),
